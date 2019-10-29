@@ -54,6 +54,7 @@ public class MoviesBean {
 
     @Transactional
     public void deleteMovie(Movie movie) {
+        entityManager.merge(movie);
         entityManager.remove(movie);
     }
 

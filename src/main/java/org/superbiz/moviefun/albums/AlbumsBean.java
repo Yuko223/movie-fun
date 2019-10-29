@@ -47,6 +47,7 @@ public class AlbumsBean {
 
     @Transactional
     public void deleteAlbum(Album album) {
+        entityManager.merge(album);
         entityManager.remove(album);
     }
 
